@@ -19,8 +19,16 @@
   --muted:#9aa0b3;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   background:var(--bg);
   color:var(--text);
@@ -28,19 +36,20 @@ body{
   overflow-x:hidden;
 }
 
-/* PARTICLES CANVAS */
 #particles{
   position:fixed;
   inset:0;
   z-index:0;
 }
 
-/* GLASS NAV */
 nav{
   position:fixed;
-  top:0;left:0;right:0;
+  top:0;
+  left:0;
+  right:0;
   display:flex;
   justify-content:space-between;
+  align-items:center;
   padding:1rem 3rem;
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -50,22 +59,33 @@ nav{
 }
 
 .nav-logo{
-  font-family:'Syne';
+  font-family:'Syne', sans-serif;
   font-weight:800;
   color:#fff;
+  font-size:1.2rem;
 }
-.nav-logo span{color:var(--accent);}
 
-nav ul{display:flex;gap:2rem;list-style:none;}
+.nav-logo span{
+  color:var(--accent);
+}
+
+nav ul{
+  display:flex;
+  gap:2rem;
+  list-style:none;
+}
+
 nav a{
   text-decoration:none;
   color:var(--muted);
   font-size:0.8rem;
   transition:0.3s;
 }
-nav a:hover{color:var(--accent);}
 
-/* SECTIONS */
+nav a:hover{
+  color:var(--accent);
+}
+
 section{
   padding:6rem 3rem;
   max-width:1200px;
@@ -75,11 +95,10 @@ section{
 }
 
 h1,h2,h3{
-  font-family:'Syne';
+  font-family:'Syne', sans-serif;
   color:#fff;
 }
 
-/* HERO */
 #hero{
   min-height:100vh;
   display:flex;
@@ -110,6 +129,7 @@ h1{
   max-width:600px;
   margin-top:1.5rem;
   color:var(--muted);
+  line-height:1.7;
   animation:fadeUp 1.4s ease;
 }
 
@@ -123,6 +143,7 @@ h1{
   backdrop-filter:blur(10px);
   background:var(--glass2);
   transition:0.3s;
+  border-radius:4px;
 }
 
 .btn:hover{
@@ -131,75 +152,74 @@ h1{
   transform:translateY(-3px);
 }
 
-/* ABOUT FOUNDER SECTION SPECIFIC */
-.about-container {
-  display: grid;
-  grid-template-columns: 1fr 1.5fr;
-  gap: 3rem;
-  align-items: center;
-  background: var(--glass);
-  border: 1px solid var(--border);
-  padding: 3rem;
-  border-radius: 20px;
-  backdrop-filter: blur(16px);
-  margin-top: 2rem;
+.about-container{
+  display:grid;
+  grid-template-columns:1fr 1.5fr;
+  gap:3rem;
+  align-items:center;
+  background:var(--glass);
+  border:1px solid var(--border);
+  padding:3rem;
+  border-radius:20px;
+  backdrop-filter:blur(16px);
+  margin-top:2rem;
 }
 
-.about-image-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 229, 255, 0.2);
-  box-shadow: 0 0 20px rgba(0, 229, 255, 0.05);
+.about-image-wrapper{
+  position:relative;
+  width:100%;
+  aspect-ratio:1/1;
+  border-radius:15px;
+  overflow:hidden;
+  border:1px solid rgba(0,229,255,0.2);
+  box-shadow:0 0 20px rgba(0,229,255,0.05);
 }
 
-.about-image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  object-position: center;
-  transition: transform 0.5s ease;
+.about-image-wrapper img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  transition:transform 0.5s ease;
 }
 
-.about-image-wrapper:hover img {
-  transform: scale(1.05);
+.about-image-wrapper:hover img{
+  transform:scale(1.05);
 }
 
-.founder-tag {
-  color: var(--accent);
-  font-size: 0.75rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-  display: block;
+.founder-tag{
+  color:var(--accent);
+  font-size:0.75rem;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:0.5rem;
+  display:block;
 }
 
-.about-details h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+.about-details h2{
+  font-size:2.5rem;
+  margin-bottom:0.5rem;
 }
 
-.about-subtitle {
-  color: var(--accent);
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
+.about-subtitle{
+  color:var(--accent);
+  font-size:1.1rem;
+  margin-bottom:1.5rem;
+  font-weight:500;
 }
 
-.about-bio {
-  color: var(--muted);
-  line-height: 1.6;
-  font-size: 0.95rem;
-  margin-bottom: 2rem;
+.about-bio{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:0.95rem;
+  margin-bottom:2rem;
 }
 
-/* GLASS CARDS */
 .project-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:1.2rem;
+  margin-top:2rem;
 }
 
 .project{
@@ -218,44 +238,155 @@ h1{
   box-shadow:0 0 25px rgba(0,229,255,0.15);
 }
 
-.project h3{color:#fff;margin-bottom:0.5rem;}
-.project p{color:var(--muted);font-size:0.85rem;}
+.project h3{
+  color:#fff;
+  margin-bottom:0.5rem;
+}
 
-/* FOOTER */
+.project p{
+  color:var(--muted);
+  font-size:0.85rem;
+  line-height:1.6;
+}
+
+.contact-text{
+  color:var(--muted);
+  margin-top:1rem;
+  max-width:650px;
+  line-height:1.7;
+}
+
+.contact-buttons{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:2rem;
+}
+
+.contact-buttons .btn{
+  margin-top:0;
+}
+
+.social-links{
+  display:flex;
+  gap:1rem;
+  margin-top:2rem;
+  flex-wrap:wrap;
+}
+
+.social-item{
+  width:55px;
+  height:55px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.12);
+  color:var(--accent);
+  text-decoration:none;
+  backdrop-filter:blur(12px);
+  transition:0.4s;
+  position:relative;
+  overflow:hidden;
+}
+
+.social-item::before{
+  content:'';
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(135deg,rgba(0,229,255,0.25),rgba(124,58,237,0.25));
+  opacity:0;
+  transition:0.4s;
+}
+
+.social-item:hover::before{
+  opacity:1;
+}
+
+.social-item svg{
+  position:relative;
+  z-index:2;
+}
+
+.social-item:hover{
+  transform:translateY(-6px) scale(1.05);
+  color:#fff;
+  border-color:var(--accent);
+  box-shadow:0 0 20px rgba(0,229,255,0.25),0 0 40px rgba(124,58,237,0.15);
+}
+
 footer{
   text-align:center;
   padding:2rem;
   border-top:1px solid var(--border);
   color:var(--muted);
+  position:relative;
+  z-index:1;
 }
 
-/* ANIMATIONS */
 @keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px);}
-  to{opacity:1;transform:translateY(0);}
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 @keyframes fadeDown{
-  from{opacity:0;transform:translateY(-30px);}
-  to{opacity:1;transform:translateY(0);}
+  from{
+    opacity:0;
+    transform:translateY(-30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 @keyframes floatText{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-5px);}
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(-5px);
+  }
 }
 
-/* MOBILE */
 @media(max-width:768px){
-  nav ul{display:none;}
-  h1{font-size:3rem;}
-  .about-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    padding: 1.5rem;
+  nav{
+    padding:1rem 1.5rem;
   }
-  .about-details h2 {
-    font-size: 2rem;
+
+  nav ul{
+    display:none;
+  }
+
+  section{
+    padding:5rem 1.5rem;
+  }
+
+  h1{
+    font-size:3rem;
+  }
+
+  .about-container{
+    grid-template-columns:1fr;
+    gap:2rem;
+    padding:1.5rem;
+  }
+
+  .about-details h2{
+    font-size:2rem;
+  }
+
+  .social-item{
+    width:50px;
+    height:50px;
   }
 }
 </style>
@@ -278,7 +409,9 @@ footer{
 <section id="hero">
   <div class="hero-tag">Science • Technology • Innovation</div>
   <h1>Scientech <span class="highlight">Digital Innovation</span></h1>
-  <p class="hero-desc">Building futuristic educational and technology-driven experiences with modern web engineering and science-based innovation.</p>
+  <p class="hero-desc">
+    Building futuristic educational and technology-driven experiences with modern web engineering and science-based innovation.
+  </p>
   <a class="btn" href="#about">Learn About Founder</a>
 </section>
 
@@ -287,19 +420,22 @@ footer{
     <div class="about-image-wrapper">
       <img src="sajid.jpg" alt="Sajid Hasan">
     </div>
-    
+
     <div class="about-details">
       <span class="founder-tag">Founder & Lead Designer</span>
       <h2>Sajid Hasan</h2>
       <div class="about-subtitle">Engineering Digital Experiences & Brand Identities</div>
+
       <p class="about-bio">
-I am passionate about web development, design, and digital content management, focusing on building modern and creative projects. I develop and customize websites with a strong emphasis on UI/UX design, animations, and interactive user experiences.
+        I am passionate about web development, design, and digital content management, focusing on building modern and creative projects. I develop and customize websites with a strong emphasis on UI/UX design, animations, and interactive user experiences.
+        <br><br>
+        Currently, I manage and work on educational and informational platforms such as biologyseekers.com, along with contributing to the development and structure of science and technology-related projects like SciTech.
+        <br><br>
+        My skill set includes HTML, CSS, and JavaScript-based web development, glassmorphism UI design, particle animations, and website optimization. I am also experienced in content research, CV design, and project presentation creation.
+        <br><br>
+        I always aim to transform ideas into practical, visually appealing, and user-friendly digital products.
+      </p>
 
-Currently, I manage and work on educational and informational platforms such as biologyseekers.com, along with contributing to the development and structure of science and technology-related projects like SciTech.
-
-My skill set includes HTML, CSS, and JavaScript-based web development, glassmorphism UI design, particle animations, and website optimization. I am also experienced in content research, CV design, and project presentation creation.
-
-I always aim to transform ideas into practical, visually appealing, and user-friendly digital products.      </p>
       <a class="btn" href="#projects" style="margin-top:0;">Explore Projects</a>
     </div>
   </div>
@@ -307,15 +443,18 @@ I always aim to transform ideas into practical, visually appealing, and user-fri
 
 <section id="projects">
   <h2>Projects</h2>
+
   <div class="project-grid">
     <div class="project">
       <h3>BiologySeekers</h3>
       <p>Educational biology platform for interactive learning and visualization.</p>
     </div>
+
     <div class="project">
       <h3>SciTech Platform</h3>
       <p>Science and technology awareness ecosystem for learners.</p>
     </div>
+
     <div class="project">
       <h3>STEM System</h3>
       <p>Interactive STEM learning experience for students.</p>
@@ -325,8 +464,41 @@ I always aim to transform ideas into practical, visually appealing, and user-fri
 
 <section id="contact">
   <h2>Contact</h2>
-  <p style="color:var(--muted);margin-top:1rem;">Let’s build something innovative together.</p>
-  <a class="btn" href="mailto:contact@scientech.org">Send Email</a>
+
+  <p class="contact-text">
+    Let’s build something innovative together. Feel free to connect with me through social platforms and explore my latest projects, creative works, and digital experiences.
+  </p>
+
+  <div class="contact-buttons">
+    <a class="btn" href="mailto:contact@scientech.org">Send Email</a>
+    <a class="btn" href="https://wa.me/8801XXXXXXXXX" target="_blank">WhatsApp</a>
+  </div>
+
+  <div class="social-links">
+    <a href="https://www.facebook.com/sajid.hasan.feb.2007" target="_blank" class="social-item" aria-label="Facebook">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8.94 6.5H10.5l.24-1.97H8.94V3.28c0-.57.16-.96.98-.96h1.05V.02C10.79 0 10.1 0 9.3 0 7.67 0 6.56.99 6.56 2.8v1.73H5v1.97h1.56V16h2.38V6.5z"/>
+      </svg>
+    </a>
+
+    <a href="https://www.instagram.com/01sajid10/" target="_blank" class="social-item" aria-label="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C5.83 0 5.56.01 4.7.05c-.85.04-1.43.17-1.94.37a3.9 3.9 0 0 0-1.4.92A3.9 3.9 0 0 0 .43 2.74c-.2.51-.33 1.09-.37 1.94C.01 5.56 0 5.83 0 8c0 2.17.01 2.44.05 3.3.04.85.17 1.43.37 1.94.2.52.48.96.92 1.4.44.44.88.72 1.4.92.51.2 1.09.33 1.94.37.86.04 1.13.05 3.3.05 2.17 0 2.44-.01 3.3-.05.85-.04 1.43-.17 1.94-.37.52-.2.96-.48 1.4-.92.44-.44.72-.88.92-1.4.2-.51.33-1.09.37-1.94.04-.86.05-1.13.05-3.3 0-2.17-.01-2.44-.05-3.3-.04-.85-.17-1.43-.37-1.94a3.9 3.9 0 0 0-.92-1.4 3.9 3.9 0 0 0-1.4-.92c-.51-.2-1.09-.33-1.94-.37C10.44.01 10.17 0 8 0zm0 1.44c2.13 0 2.38.01 3.24.05.8.04 1.23.17 1.52.28.39.15.66.33.95.62.29.29.47.56.62.95.11.29.24.72.28 1.52.04.86.05 1.11.05 3.24s-.01 2.38-.05 3.24c-.04.8-.17 1.23-.28 1.52a2.46 2.46 0 0 1-.62.95c-.29.29-.56.47-.95.62-.29.11-.72.24-1.52.28-.86.04-1.11.05-3.24.05s-2.38-.01-3.24-.05c-.8-.04-1.23-.17-1.52-.28a2.46 2.46 0 0 1-.95-.62 2.46 2.46 0 0 1-.62-.95c-.11-.29-.24-.72-.28-1.52C1.45 10.38 1.44 10.13 1.44 8s.01-2.38.05-3.24c.04-.8.17-1.23.28-1.52.15-.39.33-.66.62-.95.29-.29.56-.47.95-.62.29-.11.72-.24 1.52-.28.86-.04 1.11-.05 3.24-.05zm0 2.46A4.1 4.1 0 1 0 8 12.1 4.1 4.1 0 0 0 8 3.9zm0 6.76A2.66 2.66 0 1 1 8 5.34a2.66 2.66 0 0 1 0 5.32zm5.23-7.2a.96.96 0 1 1-.96-.96.96.96 0 0 1 .96.96z"/>
+      </svg>
+    </a>
+
+    <a href="https://www.linkedin.com/in/sajid-hasan-3916b533b/" target="_blank" class="social-item" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M1.146 1.146C1.417.875 1.78.75 2.207.75s.79.125 1.061.396c.271.271.396.634.396 1.061s-.125.79-.396 1.061c-.271.271-.634.396-1.061.396s-.79-.125-1.061-.396A1.49 1.49 0 0 1 .75 2.207c0-.427.125-.79.396-1.061zM.75 5.25h2.914V15H.75V5.25zm4.664 0h2.793v1.332h.04c.389-.737 1.34-1.514 2.758-1.514 2.949 0 3.495 1.941 3.495 4.466V15h-2.914v-4.763c0-1.136-.02-2.598-1.584-2.598-1.584 0-1.826 1.236-1.826 2.516V15H5.414V5.25z"/>
+      </svg>
+    </a>
+
+    <a href="https://github.com/Scientech120" target="_blank" class="social-item" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.5 7.5 0 0 1 4 0c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+      </svg>
+    </a>
+  </div>
 </section>
 
 <footer>
@@ -334,7 +506,6 @@ I always aim to transform ideas into practical, visually appealing, and user-fri
 </footer>
 
 <script>
-// PARTICLES SYSTEM
 const canvas = document.getElementById("particles");
 const ctx = canvas.getContext("2d");
 
@@ -343,47 +514,61 @@ canvas.height = window.innerHeight;
 
 let particlesArray = [];
 
-class Particle {
+class Particle{
   constructor(){
-    this.x = Math.random()*canvas.width;
-    this.y = Math.random()*canvas.height;
-    this.size = Math.random()*2;
-    this.speedX = (Math.random()-0.5)*0.5;
-    this.speedY = (Math.random()-0.5)*0.5;
+    this.x = Math.random() * canvas.width;
+    this.y = Math.random() * canvas.height;
+    this.size = Math.random() * 2;
+    this.speedX = (Math.random() - 0.5) * 0.5;
+    this.speedY = (Math.random() - 0.5) * 0.5;
   }
+
   update(){
     this.x += this.speedX;
     this.y += this.speedY;
-    if(this.x<0||this.x>canvas.width) this.speedX *= -1;
-    if(this.y<0||this.y>canvas.height) this.speedY *= -1;
+
+    if(this.x < 0 || this.x > canvas.width){
+      this.speedX *= -1;
+    }
+
+    if(this.y < 0 || this.y > canvas.height){
+      this.speedY *= -1;
+    }
   }
+
   draw(){
     ctx.fillStyle = "rgba(0,229,255,0.6)";
     ctx.beginPath();
-    ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.fill();
   }
 }
 
 function init(){
-  for(let i=0;i<80;i++) particlesArray.push(new Particle());
+  particlesArray = [];
+  for(let i = 0; i < 80; i++){
+    particlesArray.push(new Particle());
+  }
 }
 
 function animate(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  for(let p of particlesArray){
-    p.update();
-    p.draw();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  for(let particle of particlesArray){
+    particle.update();
+    particle.draw();
   }
+
   requestAnimationFrame(animate);
 }
 
 init();
 animate();
 
-window.addEventListener("resize",()=>{
+window.addEventListener("resize", function(){
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+  init();
 });
 </script>
 
